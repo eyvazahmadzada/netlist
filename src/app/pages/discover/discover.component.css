@@ -1,0 +1,172 @@
+section {
+  background-color: #11307C;
+  border-top-left-radius: 15%;
+  position: relative;
+  z-index: 100;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url('../../../assets/images/shawshank-cover.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-top-left-radius: 15%;
+  opacity: .2;
+  z-index: -1;
+}
+
+.search-section {
+  height: 45vh;
+}
+
+.search>input {
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.search>input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.search>span {
+  position: absolute;
+  z-index: 2;
+  left: 32px;
+  top: 7px;
+}
+
+.search>input::placeholder {
+  padding-left: 30px;
+}
+
+.search>span>img {
+  width: 25px;
+  opacity: .8;
+}
+
+.btn-custom {
+  border: 2px solid #11B7C0;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  margin: 20px 5px;
+}
+
+.btn-custom:focus,
+.btn-custom.active {
+  box-shadow: none;
+  background-color: #11B7C0;
+  border: 2px solid #11B7C0;
+}
+
+.category {
+  margin-bottom: 50px;
+}
+
+.category-header {
+  color: white;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+  .search-section {
+    height: 40vh;
+  }
+
+  .search>input {
+    font-size: 0.95em;
+  }
+
+  .search>span>img {
+    width: 22px;
+  }
+
+  .search span {
+    left: 27px;
+  }
+
+  .search>input::placeholder {
+    padding-left: 27px;
+  }
+
+  .category-header {
+    font-size: 1.55em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .search-section {
+    height: 40vh;
+  }
+
+  .search>input {
+    font-size: 0.9em;
+  }
+
+  .search>span>img {
+    width: 20px;
+  }
+
+  .search span {
+    left: 25px;
+    top: 6px;
+  }
+
+  .search>input::placeholder {
+    padding-left: 25px;
+  }
+
+  section,
+  section::after {
+    border-top-left-radius: 14%;
+  }
+
+  .category-header {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .btn-custom {
+    padding: .325em .65em;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .search>input {
+    font-size: 0.84em;
+  }
+
+  .search-section {
+    height: 35vh;
+  }
+
+  section,
+  section::after {
+    border-top-left-radius: 10%;
+  }
+
+  .category-header {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .btn-custom {
+    padding: .275em .55em;
+    font-size: 0.95em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .category-header {
+    font-size: 1.35em;
+  }
+}

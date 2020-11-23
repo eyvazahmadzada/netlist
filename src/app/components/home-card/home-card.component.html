@@ -1,0 +1,10 @@
+<div class="card shadow-lg mb-4">
+  <img
+    class="card-img img-fluid"
+    [src]="'../../../assets/images/' + cardItem.image + '.jpg'"
+    [alt]="cardItem.image"
+  />
+  <h4 class="font-weight-bolder">{{ cardItem.header }}</h4>
+  <p>{{ cardItem.body }}</p>
+  <app-button [routerLink]="cardItem.router">{{ cardItem.button }}</app-button>
+</div>

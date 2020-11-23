@@ -1,0 +1,56 @@
+<section class="row justify-content-center align-items-center">
+  <app-spinner *ngIf="isLoading"></app-spinner>
+  <div
+    class="col-lg-7 col-md-8 col-sm-10 col-11"
+    *ngIf="!isLoading"
+    style="z-index: 150"
+  >
+    <div class="form-box shadow-lg animate__animated animate__bounceInDown">
+      <form
+        #form="ngForm"
+        (ngSubmit)="successMessage === '' ? onReset(form) : closeModal()"
+      >
+        <h5 class="form-header">Reset Password</h5>
+        <div
+          *ngIf="errorMessage !== ''"
+          class="alert alert-danger"
+          role="alert"
+        >
+          {{ errorMessage }}
+        </div>
+        <div
+          *ngIf="successMessage !== ''"
+          class="alert alert-success"
+          role="success"
+        >
+          {{ successMessage }}
+        </div>
+        <div
+          class="form-group"
+          *ngIf="successMessage === ''"
+          [style.margin-bottom]="
+            email.touched && !email.valid ? '2rem' : '1rem'
+          "
+        >
+          <label for="email">Your email:</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            #email="ngModel"
+            required
+            email
+          />
+          <small *ngIf="email.touched && !email.valid"
+            >Please add a valid email</small
+          >
+        </div>
+        <app-button [disabled]="!form.valid">{{
+          successMessage === "" ? "Submit" : "OK"
+        }}</app-button>
+      </form>
+    </div>
+  </div>
+</section>

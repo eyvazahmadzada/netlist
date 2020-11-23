@@ -1,0 +1,140 @@
+img {
+  width: 40px;
+}
+
+.register {
+  border: 2px solid #11B7C0;
+  border-radius: 10px;
+  padding: .3rem 1rem !important;
+}
+
+.nav-link {
+  color: black !important;
+  padding: 6px 0;
+}
+
+.nav-link.active {
+  color: #11B7C0 !important;
+}
+
+.nav-link:hover:not(.active) {
+  color: #666 !important;
+  transition: 0.5s;
+}
+
+.dropdown-item.active {
+  color: #11B7C0;
+  background-color: transparent;
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  color: #11B7C0;
+  background-color: transparent;
+}
+
+.dropdown-item:hover {
+  background-color: #11B7C0;
+  color: white;
+}
+
+.navbar-toggler {
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.icon {
+  width: 36px;
+  height: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+
+.icon>span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+  background-color: #11B7C0;
+  transform-origin: left center;
+}
+
+.icon>span:nth-child(2) {
+  top: 10px;
+}
+
+.icon>span:last-child {
+  top: 20px;
+}
+
+.icon.active>span:first-child {
+  transform: rotate(45deg);
+  top: 0;
+  left: 8px;
+}
+
+.icon.active>span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+.icon.active>span:last-child {
+  transform: rotate(-45deg);
+  top: 25px;
+  left: 8px;
+}
+
+.show>.dropdown-menu {
+  max-height: 400px;
+  visibility: visible;
+}
+
+.dropdown-menu {
+  border-radius: 0.25rem 0.25rem 0 0;
+  min-width: 9rem;
+  padding: 0;
+  display: block;
+  max-height: 0;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+  border-color: #ccc;
+  background-color: white !important;
+  box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .15);
+}
+
+.discover-menu {
+  left: -25px;
+}
+
+.about-menu {
+  left: -30px;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+  .register {
+    border: none;
+    padding: .5rem 0 !important;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    background-color: ghostwhite;
+  }
+}

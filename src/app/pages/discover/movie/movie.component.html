@@ -1,0 +1,44 @@
+<section class="d-flex min-vh-100">
+  <div class="row justify-content-center align-items-center" *ngIf="movieData">
+    <div class="col-lg-8 col-10 mt-5 mb-5">
+      <div class="row movie">
+        <div class="col-lg-5 col-sm-6 col-11">
+          <img
+            [src]="'http://image.tmdb.org/t/p/w500/' + movieData.imgPath"
+            [alt]="movieData.title"
+            class="movie-img shadow-lg mb-2"
+          />
+          <app-button
+            width="100"
+            [color]="isInWatchlist ? '#C93B33' : '#11B7C0'"
+            (buttonClicked)="watchlistAction()"
+            *ngIf="isInWatchlist !== null"
+            ><i class="fa fa-plus" aria-hidden="true"></i>
+            {{
+              !isInWatchlist ? "Add Watchlist" : "Remove from Watchlist"
+            }}</app-button
+          >
+        </div>
+        <div class="col-lg-7 col-sm-6 movie-data">
+          <h4 class="movie-header">
+            <strong>{{ movieData.title }} ({{ movieData.year }})</strong>
+          </h4>
+          <p>{{ movieData.overview }}</p>
+          <p class="info">
+            <span>
+              <i class="fa fa-clock-o" aria-hidden="true"></i> Duration:
+              {{ movieData.duration + "min" }}
+            </span>
+            <span class="imdb mt-1">
+              <i class="fa fa-star" aria-hidden="true"></i> IMDB:
+              {{ movieData.score }}
+            </span>
+          </p>
+          <ng-container *ngFor="let genre of movieData.genres">
+            <span class="genre">{{ genre }}</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

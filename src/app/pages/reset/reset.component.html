@@ -1,0 +1,85 @@
+<section>
+  <div
+    class="row d-flex justify-content-center align-items-center text-center min-vh-100 animate__animated animate__bounceInLeft"
+  >
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf="!isLoading" class="col-lg-6 col-md-7 col-sm-9 col-11">
+      <h3 class="form-header">Enjoy <span class="netlist">netlist.</span></h3>
+      <div class="form-box shadow-lg">
+        <form
+          #form="ngForm"
+          (ngSubmit)="successMessage === '' ? onReset(form) : navigate()"
+        >
+          <div
+            *ngIf="errorMessage !== ''"
+            class="alert alert-danger"
+            role="alert"
+          >
+            {{ errorMessage }}
+          </div>
+          <div *ngIf="successMessage !== ''">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <div class="alert alert-success" role="success">
+              {{ successMessage }}
+            </div>
+          </div>
+          <div *ngIf="successMessage === ''">
+            <div
+              class="form-group"
+              [style.margin-bottom]="
+                newpassword.touched && !newpassword.valid ? '2rem' : '1rem'
+              "
+            >
+              <label for="newpassword">New Password:</label>
+              <input
+                type="password"
+                id="newpassword"
+                class="form-control"
+                ngModel
+                name="newpassword"
+                #newpassword="ngModel"
+                #newpasswordEl
+                required
+                minlength="6"
+              />
+              <small *ngIf="!newpassword.valid && newpassword.touched">{{
+                newpasswordEl.value.length === 0
+                  ? "This field is required"
+                  : "Password must be at least 6 characters long"
+              }}</small>
+            </div>
+            <div
+              class="form-group"
+              [style.margin-bottom]="
+                repeatpassword.touched && !repeatpassword.valid
+                  ? '2rem'
+                  : '1rem'
+              "
+            >
+              <label for="repeatpassword">Confirm Password:</label>
+              <input
+                type="password"
+                id="repeatpassword"
+                class="form-control"
+                ngModel
+                name="repeatpassword"
+                #repeatpassword="ngModel"
+                #repeatpasswordEl
+                required
+                minlength="6"
+              />
+              <small *ngIf="!repeatpassword.valid && repeatpassword.touched">{{
+                repeatpasswordEl.value.length === 0
+                  ? "This field is required"
+                  : "Password must be at least 6 characters long"
+              }}</small>
+            </div>
+          </div>
+          <app-button [disabled]="!form.valid">{{
+            successMessage === "" ? "Reset" : "Sign In"
+          }}</app-button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

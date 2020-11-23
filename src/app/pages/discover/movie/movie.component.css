@@ -1,0 +1,109 @@
+section {
+  background-color: #11307C;
+  color: white;
+  border-top-left-radius: 15%;
+  position: relative;
+  z-index: 100;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url('../../../../assets/images/shawshank-cover.jpg');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 15%;
+  opacity: .2;
+  z-index: -1;
+}
+
+.movie-img {
+  width: 100%;
+  height: 350px;
+  border: 2px solid #11B7C0;
+  border-radius: 10px;
+}
+
+.imdb {
+  display: block;
+  color: yellow;
+  font-size: 0.9rem;
+}
+
+.info {
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+.genre {
+  display: inline-block;
+  border: 1px solid wheat;
+  padding: 5px;
+  font-size: 0.9rem;
+  margin: 4px;
+  border-radius: 2px;
+  font-weight: bolder;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+  .movie-header {
+    font-size: 1.4rem;
+  }
+
+  .movie-data {
+    font-size: 0.975rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  section,
+  section::after {
+    border-top-left-radius: 14%;
+  }
+
+  .movie-header {
+    font-size: 1.3rem;
+  }
+
+  .movie-data {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+  section,
+  section::after {
+    border-top-left-radius: 10%;
+  }
+
+  .movie {
+    justify-content: center;
+  }
+
+  .movie-data {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+  }
+
+  .movie-header {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  .movie-img {
+    height: 250px;
+  }
+
+}

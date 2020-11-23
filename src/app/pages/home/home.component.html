@@ -1,0 +1,76 @@
+<section class="first-page">
+  <div class="row animate__animated animate__bounceInLeft">
+    <div class="col-lg-6 col-sm-7 col-11">
+      <img
+        class="main-img ml-lg-5"
+        src="../../../assets/images/home-main-img.png"
+        alt="main-img"
+      />
+    </div>
+    <div class="col-lg-6 col-sm-5 col-10 main">
+      <h1 class="main-header">It's Movie Time!</h1>
+      <p class="mr-md-4 mr-sm-3">
+        Choose the movies you want to watch and add them to your watchlist.
+      </p>
+      <app-button routerLink="/register">Join Now</app-button>
+    </div>
+  </div>
+</section>
+
+<section class="second-page d-flex align-items-center">
+  <div
+    class="row justify-content-center animate__animated animate__bounceInLeft"
+  >
+    <div class="col-md-6 col-11">
+      <div class="images">
+        <img src="../../../assets/images/shawshank.jpg" alt="shawshank" />
+        <img src="../../../assets/images/godfather.jpg" alt="godfather" />
+        <img src="../../../assets/images/fightclub.jpg" alt="fightclub" />
+        <img src="../../../assets/images/sherlock.jpg" alt="sherlock" />
+      </div>
+    </div>
+    <div class="col-md-6 col-11 second-page-main">
+      <h2 class="second-page-header">Discover Movies and TV Series</h2>
+      <div>
+        <a class="card shadow-lg" routerLink="/discover" [fragment]="'movies'">
+          <img
+            class="card-img"
+            src="../../../assets/images/movie-icon.png"
+            alt="movie-icon"
+          />
+          <span>Movies</span>
+        </a>
+        <a
+          class="card shadow-lg"
+          routerLink="/discover"
+          [fragment]="'tvseries'"
+        >
+          <img
+            class="card-img"
+            src="../../../assets/images/tvseries-icon.png"
+            alt="movie-icon"
+          />
+          <span>TV Series</span>
+        </a>
+      </div>
+      <p class="mt-lg-3 mt-sm-1 mr-md-3 second-page-text">
+        Create an account and make your watchlist with wonderful movies and tv
+        series
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="third-page d-flex align-items-center">
+  <div
+    class="row justify-content-center mt-md-0 mt-4 animate__animated animate__bounceInLeft"
+  >
+    <div class="col-md-11 col-sm-7 col-9">
+      <div class="row">
+        <div class="col-md-4 col-12" *ngFor="let cardItem of cardItems">
+          <app-home-card [cardItem]="cardItem"></app-home-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

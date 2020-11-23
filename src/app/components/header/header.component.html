@@ -1,0 +1,127 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand ml-1" routerLink="" routerLinkActive="active"
+      ><img src="../../../assets/images/logo.png" alt="logo" /> netlist</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="onToggleNavbar()"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <div class="icon" [ngClass]="{ active: isOpen }">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <div
+      class="collapse navbar-collapse ml-2"
+      id="navbarNavDropdown"
+      (click)="onSelectItem()"
+    >
+      <ul class="navbar-nav ml-lg-auto mr-lg-5" *ngIf="authData; else notAuth">
+        <li class="nav-item dropdown mr-lg-5">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Discover
+          </a>
+          <div
+            class="dropdown-menu discover-menu text-center"
+            aria-labelledby="navbarDropdown"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="discover"
+              [fragment]="'movies'"
+              [class.active]="isLinkActive('/discover#movies')"
+              >Movies</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="discover"
+              [fragment]="'tvseries'"
+              [class.active]="isLinkActive('/discover#tvseries')"
+              >TV Series</a
+            >
+          </div>
+        </li>
+        <li class="nav-item mr-lg-3">
+          <a class="nav-link" routerLink="/watchlist" routerLinkActive="active"
+            >Watchlist</a
+          >
+        </li>
+        <li class="nav-item dropdown mr-lg-3">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            {{ authData.fullName.split(" ")[0] }}
+          </a>
+          <div
+            class="dropdown-menu about-menu text-center"
+            aria-labelledby="navbarDropdown"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="account"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><i class="fa fa-user" aria-hidden="true"></i>Account</a
+            >
+            <a
+              class="dropdown-item"
+              style="cursor: pointer"
+              routerLinkActive="active"
+              (click)="onLogout()"
+              ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+
+      <ng-template #notAuth>
+        <ul class="navbar-nav ml-lg-5">
+          <li class="nav-item mr-lg-2">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item mr-lg-5">
+            <a class="nav-link" routerLink="/discover" routerLinkActive="active"
+              >Discover</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-lg-auto mr-lg-3">
+          <li class="nav-item mr-lg-1">
+            <a class="nav-link register" routerLink="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active"
+              >Sign In</a
+            >
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+  </nav>
+</header>

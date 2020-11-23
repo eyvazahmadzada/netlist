@@ -1,0 +1,8 @@
+<button
+  class="btn btn-custom"
+  [disabled]="disabled"
+  [ngStyle]="{ backgroundColor: color, width: width + '%' }"
+  (click)="onButtonClicked($event)"
+>
+  <ng-content></ng-content>
+</button>

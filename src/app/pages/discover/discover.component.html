@@ -1,0 +1,82 @@
+<section class="min-vh-100">
+  <div
+    class="row d-flex align-items-center justify-content-center search-section"
+  >
+    <div class="col-lg-6 col-md-7 col-sm-9 col-10 text-center">
+      <div class="search">
+        <span
+          ><img src="../../../assets/images/search-icon.png" alt="search-icon"
+        /></span>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Find Movies, TV Shows and more"
+          (input)="searchData($event)"
+          #searchInput
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex align-items-center justify-content-center">
+    <button
+      class="btn btn-custom"
+      [ngClass]="{ active: showMovies }"
+      (click)="toggleCategory($event)"
+    >
+      Movies
+    </button>
+    <button
+      class="btn btn-custom"
+      [ngClass]="{ active: !showMovies }"
+      (click)="toggleCategory($event)"
+    >
+      TV Series
+    </button>
+
+    <div
+      class="col-md-11 col-sm-10 col-9 mt-3 animate__animated animate__bounceInLeft"
+    >
+      <div class="category" *ngIf="searchResult && searchInput.value !== ''">
+        <h3 class="category-header">Search Results</h3>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6"
+            *ngFor="let movie of searchResult"
+          >
+            <app-movie-card [data]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+      <div class="category" *ngIf="popular">
+        <h3 class="category-header">Most popular</h3>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let movie of popular">
+            <app-movie-card [data]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" *ngIf="latest">
+        <h3 class="category-header">Latest</h3>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let movie of latest">
+            <app-movie-card [data]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="category" *ngIf="topRated">
+        <h3 class="category-header">Top Rated</h3>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6"
+            *ngFor="let movie of topRated"
+          >
+            <app-movie-card [data]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

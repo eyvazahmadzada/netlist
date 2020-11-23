@@ -1,0 +1,91 @@
+<section>
+  <div
+    class="row d-flex justify-content-center align-items-center text-center min-vh-100 animate__animated animate__bounceInLeft"
+  >
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf="!isLoading" class="col-lg-6 col-md-7 col-sm-9 col-11">
+      <h3 class="form-header">Enjoy <span class="netlist">netlist.</span></h3>
+      <div class="form-box shadow-lg">
+        <form #form="ngForm" (ngSubmit)="onRegister(form)">
+          <div
+            *ngIf="errorMessage !== ''"
+            class="alert alert-danger"
+            role="alert"
+          >
+            {{ errorMessage }}
+          </div>
+          <div
+            class="form-group"
+            [style.margin-bottom]="
+              name.touched && !name.valid ? '2rem' : '1rem'
+            "
+          >
+            <label for="fullname">Full Name:</label>
+            <input
+              type="text"
+              id="fullname"
+              class="form-control"
+              ngModel
+              name="fullname"
+              #name="ngModel"
+              required
+            />
+            <small *ngIf="name.touched && !name.valid"
+              >This field is required</small
+            >
+          </div>
+          <div
+            class="form-group"
+            [style.margin-bottom]="
+              email.touched && !email.valid ? '2rem' : '1rem'
+            "
+          >
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              #email="ngModel"
+              ngModel
+              required
+              email
+            />
+            <small *ngIf="email.touched && !email.valid"
+              >Please add a valid email</small
+            >
+          </div>
+          <div
+            class="form-group"
+            [style.margin-bottom]="
+              password.touched && !password.valid ? '2rem' : '1rem'
+            "
+          >
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              ngModel
+              name="password"
+              #password="ngModel"
+              #passwordEl
+              required
+              minlength="6"
+            />
+            <small *ngIf="!password.valid && password.touched">{{
+              passwordEl.value.length === 0
+                ? "This field is required"
+                : "Password must be at least 6 characters long"
+            }}</small>
+          </div>
+          <app-button [disabled]="!form.valid">Sign Up</app-button>
+          <div class="form-bottom">
+            Already have an account?
+            <a class="login-here" routerLink="/login">Login here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

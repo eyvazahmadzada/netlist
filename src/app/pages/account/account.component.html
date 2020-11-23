@@ -1,0 +1,129 @@
+<section>
+  <div
+    class="row d-flex justify-content-center align-items-center text-center min-vh-100"
+  >
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div
+      class="col-lg-6 col-md-7 col-sm-9 col-11 animate__animated animate__bounceInLeft"
+      *ngIf="!isLoading"
+    >
+      <h3 class="account-header">My Account</h3>
+      <div class="form-box shadow-lg">
+        <button
+          class="btn btn-custom"
+          [class.active]="updateProfileDetails"
+          (click)="selectCategory($event)"
+        >
+          Profile Details
+        </button>
+        <button
+          class="btn btn-custom"
+          [class.active]="!updateProfileDetails"
+          (click)="selectCategory($event)"
+        >
+          Password
+        </button>
+
+        <form #form="ngForm" (ngSubmit)="update(form)">
+          <h5 class="form-header">
+            {{
+              updateProfileDetails
+                ? "Update Profile Details"
+                : "Update Password"
+            }}
+          </h5>
+          <div
+            *ngIf="errorMessage !== ''"
+            class="alert alert-danger"
+            role="alert"
+          >
+            {{ errorMessage }}
+          </div>
+          <div
+            *ngIf="successMessage !== ''"
+            class="alert alert-success"
+            role="success"
+          >
+            {{ successMessage }}
+          </div>
+          <div *ngIf="updateProfileDetails; else updatePassword">
+            <div class="form-group">
+              <label for="fullname">Full Name:</label>
+              <input
+                type="text"
+                id="fullname"
+                class="form-control"
+                [ngModel]="userData.fullName"
+                name="fullname"
+                ngModel
+                #fullname="ngModel"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                [ngModel]="userData.email"
+                name="email"
+                ngModel
+                #email="ngModel"
+                required
+                email
+              />
+            </div>
+          </div>
+          <ng-template #updatePassword>
+            <div
+              class="form-group"
+              [style.margin-bottom]="
+                curpassword.touched && !curpassword.valid ? '2rem' : '1rem'
+              "
+            >
+              <label for="curpassword">Current Password:</label>
+              <input
+                type="password"
+                id="curpassword"
+                class="form-control"
+                name="curpassword"
+                ngModel
+                #curpassword="ngModel"
+                #curpasswordEl
+                required
+                minlength="6"
+              />
+              <small *ngIf="!curpassword.valid && curpassword.touched">
+                Password must be at least 6 characters long
+              </small>
+            </div>
+            <div
+              class="form-group"
+              [style.margin-bottom]="
+                newpassword.touched && !newpassword.valid ? '2rem' : '1rem'
+              "
+            >
+              <label for="newpassword">New Password:</label>
+              <input
+                type="password"
+                id="newpassword"
+                class="form-control"
+                name="newpassword"
+                ngModel
+                #newpassword="ngModel"
+                #newPasswordEl
+                required
+                minlength="6"
+              />
+              <small *ngIf="!newpassword.valid && newpassword.touched"
+                >Password must be at least 6 characters long
+              </small>
+            </div>
+          </ng-template>
+          <app-button [disabled]="!form.valid">Update</app-button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

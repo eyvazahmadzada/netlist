@@ -1,0 +1,20 @@
+<div class="card mb-4 shadow-lg">
+  <img
+    [src]="'http://image.tmdb.org/t/p/w500/' + data.imgPath"
+    [alt]="data.title"
+  />
+  <div class="movie-info text-center">
+    <h5>{{ data.title }}</h5>
+    <span class="duration">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      {{ data.duration + "min" }}
+    </span>
+    <span class="genre">{{ data.genres ? data.genres.join(", ") : "" }}</span>
+    <span class="year">{{ data.year }}</span>
+    <span class="imdb"
+      ><i class="fa fa-star" aria-hidden="true"></i>
+      {{ data.score + "/10" }}</span
+    >
+    <app-button (buttonClicked)="aboutMovie()">About</app-button>
+  </div>
+</div>

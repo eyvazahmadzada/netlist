@@ -1,0 +1,16 @@
+<section class="min-vh-100">
+  <div
+    class="row d-flex align-items-center justify-content-center animate__animated animate__bounceInLeft"
+  >
+    <div class="col-md-11 col-sm-10 col-9">
+      <div class="category" *ngIf="movies">
+        <h3 class="category-header">My Watchlist</h3>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let movie of movies">
+            <app-movie-card [data]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

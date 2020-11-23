@@ -1,0 +1,99 @@
+section {
+  background-color: #11B7C0;
+  border-top-left-radius: 20%;
+  height: 100%;
+}
+
+.netlist {
+  color: #11307C;
+}
+
+.login-here {
+  color: #11B7C0;
+  cursor: pointer;
+}
+
+h3 {
+  color: white;
+}
+
+.form-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px 0 20px 0;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bolder;
+  float: left;
+}
+
+.form-control {
+  border: 1px solid #11B7C0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-bottom {
+  margin-top: 15px;
+}
+
+.form-group>.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.alert {
+  padding: 0.5em 1.25em;
+  font-size: 0.95em;
+}
+
+small {
+  color: red;
+  margin-top: 2px;
+  float: left;
+}
+
+@media only screen and (max-width: 767px) {
+  section {
+    font-size: 0.95em;
+  }
+
+  .form-control {
+    padding: .325em .65em;
+    font-size: 0.95em;
+  }
+
+  .form-header {
+    font-size: 1.7em;
+  }
+}
+
+
+@media only screen and (max-width: 576px) {
+  section {
+    border-top-left-radius: 25%;
+    font-size: 0.9em;
+  }
+
+  .form-control {
+    padding: .225em .45em;
+    font-size: 0.9em;
+  }
+
+  .form-header {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .form-bottom {
+    font-size: 0.95em;
+  }
+}

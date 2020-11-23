@@ -1,0 +1,130 @@
+{
+  "configVersion": 1,
+  "timestamp": 1606151014119,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.1944bea267b8a31aab9a.js",
+        "/manifest.webmanifest",
+        "/polyfills.a4021de53358bb0fec14.js",
+        "/runtime.e227d1a0e31cbccbf8ec.js",
+        "/styles.b6ad455d3ce0e407b03a.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/choose.jpg",
+        "/assets/images/create-account.jpg",
+        "/assets/images/fb.png",
+        "/assets/images/fightclub.jpg",
+        "/assets/images/godfather.jpg",
+        "/assets/images/home-bck-1.jpg",
+        "/assets/images/home-bck-2.jpg",
+        "/assets/images/home-bck-3.jpg",
+        "/assets/images/home-main-img.png",
+        "/assets/images/ig.png",
+        "/assets/images/logo.png",
+        "/assets/images/movie-icon.png",
+        "/assets/images/search-icon.png",
+        "/assets/images/shawshank-cover.jpg",
+        "/assets/images/shawshank.jpg",
+        "/assets/images/sherlock.jpg",
+        "/assets/images/tvseries-icon.png",
+        "/assets/images/twitter.png",
+        "/assets/images/watchlist-cover.jpg",
+        "/assets/images/watchlist.jpg",
+        "/home-bck-1.94b035cc5ac126e099c9.jpg",
+        "/home-bck-2.bd4bc76645d06f674e56.jpg",
+        "/home-bck-3.8581405f2c61b57a7968.jpg",
+        "/shawshank-cover.35ac2d8e6b28b01aa51d.jpg",
+        "/watchlist-cover.205bd2e927fb69df5dc8.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/choose.jpg": "e6b37bfc30b92cf747e1f96f9314118474aca516",
+    "/assets/images/create-account.jpg": "82bcb1768667d3a8d60fdd8d1a478211aa51a3c4",
+    "/assets/images/fb.png": "bfb84c13b6618aadda3ac73bc38a005824a870e2",
+    "/assets/images/fightclub.jpg": "ff7f4c782fa3b46d572cb2bb9479ddace38e65c8",
+    "/assets/images/godfather.jpg": "63a788612efe7c88a04888a20cc6c0d98ab050ad",
+    "/assets/images/home-bck-1.jpg": "990f621ad90bd30393cafe7f82e8d860e27f67c7",
+    "/assets/images/home-bck-2.jpg": "8b059ff3c586c63a342fcd4e260defe6bd69c8fd",
+    "/assets/images/home-bck-3.jpg": "65d17e3cb0c6f25fbcc91fdd2db262e8ff9f8129",
+    "/assets/images/home-main-img.png": "60099e9ba8a3efe8bc4846f89877246f64ee678a",
+    "/assets/images/ig.png": "c4ecd9edbbc93d7fc9e806852baee7ed09b70557",
+    "/assets/images/logo.png": "56f866c42a87163e14cbd18592d09291cd2f7d5b",
+    "/assets/images/movie-icon.png": "aa449d8052f3d12c110eedbae99ab3e648c32335",
+    "/assets/images/search-icon.png": "2d9578e6f3dbcda92035bde70d582a92717e81dd",
+    "/assets/images/shawshank-cover.jpg": "267b9045aa6706e9d82a04168c4033392086161d",
+    "/assets/images/shawshank.jpg": "36f5c88495754b1ae7f29f183fae22a13e7e7915",
+    "/assets/images/sherlock.jpg": "8929543592f63700e21746fd8158ae60c39f1bcc",
+    "/assets/images/tvseries-icon.png": "69696b8aac8f1e78970993d7f2413fb74e878cfc",
+    "/assets/images/twitter.png": "8de399ff40828c686e1df568e864e016fd117b95",
+    "/assets/images/watchlist-cover.jpg": "147c3be60d0293f04d691989f61c39c099301723",
+    "/assets/images/watchlist.jpg": "794238a620676c0159dc6f7b84f1452125f03218",
+    "/favicon.ico": "0c1e872480e5cfeea7cce938be04e2e44c7e9428",
+    "/home-bck-1.94b035cc5ac126e099c9.jpg": "990f621ad90bd30393cafe7f82e8d860e27f67c7",
+    "/home-bck-2.bd4bc76645d06f674e56.jpg": "8b059ff3c586c63a342fcd4e260defe6bd69c8fd",
+    "/home-bck-3.8581405f2c61b57a7968.jpg": "65d17e3cb0c6f25fbcc91fdd2db262e8ff9f8129",
+    "/index.html": "6882f67be166f5a8fe5e0b52d1928311b22683c4",
+    "/main.1944bea267b8a31aab9a.js": "82cc6631ac33a6e35d95fab82940d8bd94363951",
+    "/manifest.webmanifest": "de12ce8cd337af81faebff064b33948b67526d3e",
+    "/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
+    "/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/shawshank-cover.35ac2d8e6b28b01aa51d.jpg": "267b9045aa6706e9d82a04168c4033392086161d",
+    "/styles.b6ad455d3ce0e407b03a.css": "55d287628676ee280376a63c11ebf49fe6499136",
+    "/watchlist-cover.205bd2e927fb69df5dc8.jpg": "147c3be60d0293f04d691989f61c39c099301723"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
