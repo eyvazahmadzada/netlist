@@ -19,11 +19,7 @@
         <span></span>
       </div>
     </button>
-    <div
-      class="collapse navbar-collapse ml-2"
-      id="navbarNavDropdown"
-      (click)="onSelectItem()"
-    >
+    <div class="collapse navbar-collapse ml-2" id="navbarNavDropdown">
       <ul class="navbar-nav ml-lg-auto mr-lg-5" *ngIf="authData; else notAuth">
         <li class="nav-item dropdown mr-lg-5">
           <a
@@ -45,6 +41,7 @@
               routerLink="discover"
               [fragment]="'movies'"
               [class.active]="isLinkActive('/discover#movies')"
+              (click)="onSelectItem()"
               >Movies</a
             >
             <a
@@ -52,12 +49,17 @@
               routerLink="discover"
               [fragment]="'tvseries'"
               [class.active]="isLinkActive('/discover#tvseries')"
+              (click)="onSelectItem()"
               >TV Series</a
             >
           </div>
         </li>
         <li class="nav-item mr-lg-3">
-          <a class="nav-link" routerLink="/watchlist" routerLinkActive="active"
+          <a
+            class="nav-link"
+            routerLink="/watchlist"
+            routerLinkActive="active"
+            (click)="onSelectItem()"
             >Watchlist</a
           >
         </li>
@@ -81,6 +83,7 @@
               routerLink="account"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="onSelectItem()"
               ><i class="fa fa-user" aria-hidden="true"></i>Account</a
             >
             <a
@@ -88,6 +91,7 @@
               style="cursor: pointer"
               routerLinkActive="active"
               (click)="onLogout()"
+              (click)="onSelectItem()"
               ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a
             >
           </div>
@@ -102,21 +106,36 @@
               routerLink="/"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="onSelectItem()"
               >Home</a
             >
           </li>
           <li class="nav-item mr-lg-5">
-            <a class="nav-link" routerLink="/discover" routerLinkActive="active"
+            <a
+              class="nav-link"
+              routerLink="/discover"
+              routerLinkActive="active"
+              (click)="onSelectItem()"
               >Discover</a
             >
           </li>
         </ul>
         <ul class="navbar-nav ml-lg-auto mr-lg-3">
           <li class="nav-item mr-lg-1">
-            <a class="nav-link register" routerLink="/register">Register</a>
+            <a
+              class="nav-link register"
+              routerLink="/register"
+              routerLinkActive="active"
+              (click)="onSelectItem()"
+              >Register</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login" routerLinkActive="active"
+            <a
+              class="nav-link"
+              routerLink="/login"
+              routerLinkActive="active"
+              (click)="onSelectItem()"
               >Sign In</a
             >
           </li>

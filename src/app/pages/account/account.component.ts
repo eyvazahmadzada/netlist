@@ -80,27 +80,31 @@ export class AccountComponent implements OnInit, OnDestroy {
       this.authService.getUserData(this.userData).then((data) => {
         const curPassword = form.value.curpassword;
         const newPassword = form.value.newpassword;
-        if (data.password === curPassword) {
-          this.isLoading = true;
-          this.authService
-            .changeCredentials({
-              idToken: this.userData.idToken,
-              password: newPassword,
-              returnSecureToken: true,
-            })
-            .then(() => {
-              this.isLoading = false;
-              this.authService.changeUserData(this.userData, newPassword);
-              this.successMessage =
-                'Your password has been successfully changed';
-            })
-            .catch((error) => {
-              this.isLoading = false;
-              this.errorMessage = this.errorService.handleError(error);
-            });
+        if (curPassword !== newPassword) {
+          if (data.password === curPassword) {
+            this.isLoading = true;
+            this.authService
+              .changeCredentials({
+                idToken: this.userData.idToken,
+                password: newPassword,
+                returnSecureToken: true,
+              })
+              .then(() => {
+                this.isLoading = false;
+                this.authService.changeUserData(this.userData, newPassword);
+                this.successMessage =
+                  'Your password has been successfully changed';
+              })
+              .catch((error) => {
+                this.isLoading = false;
+                this.errorMessage = this.errorService.handleError(error);
+              });
+          } else {
+            this.errorMessage = 'Your current password is incorrect';
+            this.updateProfileDetails = false;
+          }
         } else {
-          this.errorMessage = 'Your current password is incorrect';
-          this.updateProfileDetails = false;
+          this.errorMessage = 'Passwords are the same';
         }
       });
     }

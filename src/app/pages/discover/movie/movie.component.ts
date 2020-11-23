@@ -37,7 +37,7 @@ export class MovieComponent implements OnInit {
   }
 
   checkIsInWatchlist(): void {
-    this.watchlistService.getWatchlist(this.isAuth).then((data) => {
+    this.watchlistService.getWatchlist(JSON.parse(this.isAuth)).then((data) => {
       if (data && data.watchlist) {
         this.isInWatchlist =
           data.watchlist.findIndex((item) => item.id === this.movieData.id) !==
