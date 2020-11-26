@@ -8,25 +8,27 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class WatchListService {
-  userData = this.authService.isAuthenticated;
+  userData = JSON.parse(localStorage.getItem('userData'));
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  createWatchlist(authData, watchlist: Movie[]): void {
+  createWatchlist(watchlist: Movie[]): void {
+    const userData = JSON.parse(localStorage.getItem('userData'));
     this.http
       .post<void>(
-        `https://netlist-project.firebaseio.com/watchlist.json?auth=${authData.idToken}`,
-        { watchlist, userId: authData.userId }
+        `https://netlist-project.firebaseio.com/watchlist.json?auth=${userData.idToken}`,
+        { watchlist, userId: userData.userId }
       )
       .subscribe();
   }
 
-  async getWatchlist(authData): Promise<{ watchlist: Movie[]; key: string }> {
+  async getWatchlist(): Promise<{ watchlist: Movie[]; key: string }> {
+    const userData = JSON.parse(localStorage.getItem('userData'));
     const queryParams =
       '?auth=' +
-      authData.idToken +
+      userData.idToken +
       '&orderBy="userId"&equalTo="' +
-      authData.userId +
+      userData.userId +
       '"';
     return await this.http
       .get(
@@ -48,30 +50,30 @@ export class WatchListService {
   }
 
   updateWatchlist(key: string, watchlist): void {
+    const userData = JSON.parse(localStorage.getItem('userData'));
     this.http
       .put(
-        `https://netlist-project.firebaseio.com/watchlist/${key}/watchlist.json/?auth=${this.userData.idToken}`,
+        `https://netlist-project.firebaseio.com/watchlist/${key}/watchlist.json/?auth=${userData.idToken}`,
         { ...watchlist }
       )
       .subscribe();
   }
 
   addToWatchlist(movie: Movie): void {
-    this.getWatchlist(this.userData).then((watchlistData) => {
+    this.getWatchlist().then((watchlistData) => {
       if (watchlistData && watchlistData.watchlist) {
         if (!watchlistData.watchlist.find((item) => item.id === movie.id)) {
           const updatedWatchlist = [...watchlistData.watchlist, movie];
           this.updateWatchlist(watchlistData.key, updatedWatchlist);
         }
       } else {
-        const authData = JSON.parse(localStorage.getItem('userData'));
-        this.createWatchlist(authData, [movie]);
+        this.createWatchlist([movie]);
       }
     });
   }
 
   removeFromWatchlist(movie: Movie): void {
-    this.getWatchlist(this.userData).then((watchlistData) => {
+    this.getWatchlist().then((watchlistData) => {
       const updatedWatchlist = watchlistData.watchlist.filter(
         (item) => item.id !== movie.id
       );

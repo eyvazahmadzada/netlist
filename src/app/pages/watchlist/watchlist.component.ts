@@ -23,7 +23,7 @@ export class WatchlistComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authService.authData.subscribe((subs) => {
       this.authData = subs.userData;
     });
-    this.watchlistService.getWatchlist(this.authData).then((data) => {
+    this.watchlistService.getWatchlist().then((data) => {
       if (data && data.watchlist) {
         this.movies = data.watchlist;
       }
