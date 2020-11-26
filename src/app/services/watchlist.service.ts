@@ -64,6 +64,7 @@ export class WatchListService {
           this.updateWatchlist(watchlistData.key, updatedWatchlist);
         }
       } else {
+        console.log('creating');
         this.createWatchlist([movie]);
       }
     });

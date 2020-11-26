@@ -41,6 +41,7 @@ export class ResetComponent {
             .then((userData) => {
               this.authService.changeUserData(userData, newPassword).then();
             });
+          localStorage.removeItem('resetPassword');
         })
         .catch((error) => {
           this.isLoading = false;
