@@ -12,11 +12,11 @@ export class WatchListService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  createWatchlist(watchlist: Movie[]): void {
+  createWatchlist(authData, watchlist: Movie[]): void {
     this.http
       .post<void>(
-        `https://netlist-project.firebaseio.com/watchlist.json?auth=${this.userData.idToken}`,
-        { watchlist, userId: this.userData.userId }
+        `https://netlist-project.firebaseio.com/watchlist.json?auth=${authData.idToken}`,
+        { watchlist, userId: authData.userId }
       )
       .subscribe();
   }
@@ -64,8 +64,8 @@ export class WatchListService {
           this.updateWatchlist(watchlistData.key, updatedWatchlist);
         }
       } else {
-        console.log('creating');
-        this.createWatchlist([movie]);
+        const authData = JSON.parse(localStorage.getItem('userData'));
+        this.createWatchlist(authData, [movie]);
       }
     });
   }
